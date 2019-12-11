@@ -5,13 +5,16 @@
   
 
   
-  <title>Hexo</title>
+  <title>学习如何使用Hexo写博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="我是通过跟着B站视频做出来hexo的，链接：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av44544186 1.下载Node js 和git2.安装hexo并使用1).安装hexo在cmd中输入下面代码  &#x2F;&#x2F;利用npm安装cnpm npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org  &#x2F;&#x2F;利用cnpm安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习如何使用Hexo写博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;11&#x2F;%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我是通过跟着B站视频做出来hexo的，链接：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av44544186 1.下载Node js 和git2.安装hexo并使用1).安装hexo在cmd中输入下面代码  &#x2F;&#x2F;利用npm安装cnpm npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org  &#x2F;&#x2F;利用cnpm安">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-11T11:22:23.172Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -59,116 +62,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Mysql免安装版配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2019-12-11T11:22:57.294Z" itemprop="datePublished">2019-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/">Mysql免安装版配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-先配置环境变量"><a href="#1-先配置环境变量" class="headerlink" title="1.先配置环境变量"></a>1.先配置环境变量</h3><p>解压的mysql的bin目录，添加到系统变量path中</p>
-<h3 id="2-新建my-ini文件，或者默认有-ini文件的话就不用添加"><a href="#2-新建my-ini文件，或者默认有-ini文件的话就不用添加" class="headerlink" title="2.新建my.ini文件，或者默认有.ini文件的话就不用添加"></a>2.新建my.ini文件，或者默认有.ini文件的话就不用添加</h3><p>在ini文件中要有如下代码：</p>
-<pre><code>[mysqld]
-
-//设置3306端口
-
-port=3306
-
-//设置mysql的安装目录
-
-//这里的目录要设置成自己安装的目录
-basedir=F:\mysql-8.0.11-winx64
-
-//设置mysql数据库的数据的存放目录
-
-//这里的目录要设置成自己安装的目录，如果没有data文件夹，需要新建一个
-datadir=F:\mysql-8.0.11-winx64\Data
-
-//允许最大连接数
-
-max_connections=250
-
-//允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
-
-max_connect_errors=10
-
-//服务端使用的字符集默认为UTF8
-
-character-set-server=utf8
-
-//创建新表时将使用的默认存储引擎
-
-default-storage-engine=INNODB
-
-//默认使用“mysql_native_password”插件认证
-
-default_authentication_plugin=mysql_native_password
-
-[mysql]
-
-//设置mysql客户端默认字符集
-
-default-character-set=utf8
-
-[client]
-
-default-character-set=utf8
-
-sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </code></pre><h3 id="3-以管理员权限打开cmd"><a href="#3-以管理员权限打开cmd" class="headerlink" title="3.以管理员权限打开cmd"></a>3.以管理员权限打开cmd</h3><p>进入mysql的bin目录下，执行下面的代码：</p>
-<pre><code>//初始化mysql
-mysqld --initialize --user=mysql --console;
-
-//安装mysql
-mysqld --install MySQL;
-
-//启动服务
-net start mysql;
-
-//登录数据库
-mysql -u root -p;
-
-//使用mysql数据库
-use mysql;
-
-//修改mysql数据库的密码
-update user set password=PASSWORD(&apos;123456&apos;)where user = &apos;root&apos;;
-
-//输入
-flush privileges;
-
-//最后退出
-quit;</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/" data-id="ck417gtci0002a8p6ehjz04lu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-学习如何使用Hexo写博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-学习如何使用Hexo写博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/11/%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/" class="article-date">
   <time datetime="2019-12-11T11:17:53.253Z" itemprop="datePublished">2019-12-11</time>
@@ -181,8 +75,8 @@ quit;</code></pre>
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/11/%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/">学习如何使用Hexo写博客</a>
+    <h1 class="article-title" itemprop="name">
+      学习如何使用Hexo写博客
     </h1>
   
 
@@ -232,48 +126,28 @@ branch: master</code></pre><p>2.部署到远端，在C:\Users\Administrator\blog
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Hello Jack" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/08/Hello%20Jack/" class="article-date">
-  <time datetime="2019-12-08T06:22:09.464Z" itemprop="datePublished">2019-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Mysql免安装版配置
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/08/Hello%20Jack/">Hello Jack</a>
-    </h1>
   
+    <a href="/2019/12/08/Hello%20Jack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello Jack</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hello-Jack-I-wannt-play-a-game"><a href="#Hello-Jack-I-wannt-play-a-game" class="headerlink" title="Hello Jack , I wannt play a game"></a>Hello Jack , I wannt play a game</h2><p>敢在时间里自焚，必在永恒中结晶</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/Hello%20Jack/" data-id="ck417gtcc0000a8p6f09cew4b" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
