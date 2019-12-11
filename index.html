@@ -5,16 +5,16 @@
   
 
   
-  <title>Hexo</title>
+  <title>Luyame Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Luyame Blog">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Luyame Blog">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Luyame Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,7 +33,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Luyame Blog</a>
       </h1>
       
     </div>
@@ -84,81 +84,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-先配置环境变量"><a href="#1-先配置环境变量" class="headerlink" title="1.先配置环境变量"></a>1.先配置环境变量</h3><p>解压的mysql的bin目录，添加到系统变量path中</p>
-<h3 id="2-新建my-ini文件，或者默认有-ini文件的话就不用添加"><a href="#2-新建my-ini文件，或者默认有-ini文件的话就不用添加" class="headerlink" title="2.新建my.ini文件，或者默认有.ini文件的话就不用添加"></a>2.新建my.ini文件，或者默认有.ini文件的话就不用添加</h3><p>在ini文件中要有如下代码：</p>
-<pre><code>[mysqld]
-
-//设置3306端口
-
-port=3306
-
-//设置mysql的安装目录
-
-//这里的目录要设置成自己安装的目录
-basedir=F:\mysql-8.0.11-winx64
-
-//设置mysql数据库的数据的存放目录
-
-//这里的目录要设置成自己安装的目录，如果没有data文件夹，需要新建一个
-datadir=F:\mysql-8.0.11-winx64\Data
-
-//允许最大连接数
-
-max_connections=250
-
-//允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
-
-max_connect_errors=10
-
-//服务端使用的字符集默认为UTF8
-
-character-set-server=utf8
-
-//创建新表时将使用的默认存储引擎
-
-default-storage-engine=INNODB
-
-//默认使用“mysql_native_password”插件认证
-
-default_authentication_plugin=mysql_native_password
-
-[mysql]
-
-//设置mysql客户端默认字符集
-
-default-character-set=utf8
-
-[client]
-
-default-character-set=utf8
-
-sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </code></pre><h3 id="3-以管理员权限打开cmd"><a href="#3-以管理员权限打开cmd" class="headerlink" title="3.以管理员权限打开cmd"></a>3.以管理员权限打开cmd</h3><p>进入mysql的bin目录下，执行下面的代码：</p>
-<pre><code>//初始化mysql
-mysqld --initialize --user=mysql --console;
-
-//安装mysql
-mysqld --install MySQL;
-
-//启动服务
-net start mysql;
-
-//登录数据库
-mysql -u root -p;
-
-//使用mysql数据库
-use mysql;
-
-//修改mysql数据库的密码
-update user set password=PASSWORD(&apos;123456&apos;)where user = &apos;root&apos;;
-
-//输入
-flush privileges;
-
-//最后退出
-quit;</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/" data-id="ck417gtci0002a8p6ehjz04lu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/11/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E9%85%8D%E7%BD%AE/" data-id="ck41b4lun0001zsp62c04auup" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,42 +125,16 @@ quit;</code></pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p>我是通过跟着B站视频做出来hexo的，链接：<a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">https://www.bilibili.com/video/av44544186</a></p>
-<h2 id="1-下载Node-js-和git"><a href="#1-下载Node-js-和git" class="headerlink" title="1.下载Node js 和git"></a>1.下载Node js 和git</h2><h2 id="2-安装hexo并使用"><a href="#2-安装hexo并使用" class="headerlink" title="2.安装hexo并使用"></a>2.安装hexo并使用</h2><h3 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1).安装hexo"></a>1).安装hexo</h3><p>在cmd中输入下面代码 </p>
-<pre><code>//利用npm安装cnpm
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-
-//利用cnpm安装hexo
-cnpm install -g hexo-cli</code></pre><h3 id="2-新建文件夹blog"><a href="#2-新建文件夹blog" class="headerlink" title="2).新建文件夹blog"></a>2).新建文件夹blog</h3><p>路径名： c:\Users\Administrator\blog</p>
-<h3 id="3-需要有git的文件配置"><a href="#3-需要有git的文件配置" class="headerlink" title="3).需要有git的文件配置"></a>3).需要有git的文件配置</h3><p>安装git后在电脑中有git bash here这个文件，类似于cmd的命令窗口，打开，输入下面代码，用户名和邮箱要写和github的用户名邮箱一样。</p>
-<pre><code>git config --global user.name &quot;youname&quot;
-git config --global user.email &quot;aa@qq.com&quot;</code></pre><p>这时候在c:\Users\Administrator\下有一个名字叫.gitconfig文件，可以打开看到里面的内容</p>
-<h3 id="4-初始化hexo"><a href="#4-初始化hexo" class="headerlink" title="4).初始化hexo"></a>4).初始化hexo</h3><p>安装git后电脑中有git CMD，打开并输入下面代码        </p>
-<pre><code>hexo init</code></pre><h3 id="5-启动hexo"><a href="#5-启动hexo" class="headerlink" title="5).启动hexo"></a>5).启动hexo</h3><p>在c:\Users\Administrator\blog目录下，用cmd执行下面的代码，启动hexo</p>
-<pre><code>hexo s</code></pre><p>执行完后可以在浏览器输入localhost:4000来访问</p>
-<h3 id="6-写文章"><a href="#6-写文章" class="headerlink" title="6).写文章"></a>6).写文章</h3><p>我用的是vscode写文章，文件类型为markdown类型，扩展名是md</p>
-<p>将文章放到c:\Users\Administrator\blog\source_posts文件夹下</p>
-<p>在c:\Users\Administrator\blog目录下执行下面代码，清理并生成hexo文件</p>
-<pre><code>//清理
-hexo clean
-
-//生成
-hexo g</code></pre><p>刷新一下浏览器localhost:4000，现在本地就可以看到文章了</p>
-<h2 id="3-部署到github上"><a href="#3-部署到github上" class="headerlink" title="3.部署到github上"></a>3.部署到github上</h2><h3 id="1-新建github仓库"><a href="#1-新建github仓库" class="headerlink" title="1).新建github仓库"></a>1).新建github仓库</h3><p>在github上要新建github仓库，名称格式必须是 github的昵称.github.io  （我的名称 : Luyame.github.io）</p>
-<h3 id="2-安装并把文件部署到远端"><a href="#2-安装并把文件部署到远端" class="headerlink" title="2).安装并把文件部署到远端"></a>2).安装并把文件部署到远端</h3><p>1.安装，在cmd执行如下代码</p>
-<pre><code>cnpm install save --hexo-deployer-git</code></pre><p>打开C:\Users\Administrator\blog下的_config.yml文件，如下修改</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-type: &apos;git&apos;
-//这里的repo改成你自己github上的仓库地址
-repo: https://github.com/Luyame/Luyame.github.io.git
-branch: master</code></pre><p>2.部署到远端，在C:\Users\Administrator\blog目录下，cmd中输入下面的代码:</p>
-<pre><code>hexo d</code></pre><p>输入之后会要你输入账号和密码，填写正确后就部署到github仓库中了，之后就可通过浏览器访问github仓库名 Luyame.github.io</p>
-
+<h2 id="1-下载Node-js-和git"><a href="#1-下载Node-js-和git" class="headerlink" title="1.下载Node js 和git"></a>1.下载Node js 和git</h2>
+        
+          <p class="article-more-link">
+            <a href="/2019/12/11/%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/11/%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/" data-id="ck417gtch0001a8p6f5os8xqd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/11/%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/" data-id="ck41b4lup0002zsp6gsggg0w9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +171,7 @@ branch: master</code></pre><p>2.部署到远端，在C:\Users\Administrator\blog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/Hello%20Jack/" data-id="ck417gtcc0000a8p6f09cew4b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/Hello%20Jack/" data-id="ck41b4lui0000zsp6d5uv7ick" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,7 +235,7 @@ branch: master</code></pre><p>2.部署到远端，在C:\Users\Administrator\blog
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 Jack Luyame<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
