@@ -46,15 +46,17 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="live2d">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;20&#x2F;live2d&#x2F;index.html">
+  <meta name="description" content="之前看到有些人的博客上有看板娘，觉得很有趣，今天就来搞了一下，需要用到live2d。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="看板娘">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;20&#x2F;%E7%9C%8B%E6%9D%BF%E5%A8%98&#x2F;index.html">
 <meta property="og:site_name" content="Luyame&#39;s Blog">
+<meta property="og:description" content="之前看到有些人的博客上有看板娘，觉得很有趣，今天就来搞了一下，需要用到live2d。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-20T05:56:24.144Z">
+<meta property="og:updated_time" content="2020-06-20T11:58:42.669Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/06/20/live2d/">
+<link rel="canonical" href="http://yoursite.com/2020/06/20/%E7%9C%8B%E6%9D%BF%E5%A8%98/">
 
 
 <script id="page-configurations">
@@ -66,7 +68,7 @@
   };
 </script>
 
-  <title>live2d | Luyame's Blog</title>
+  <title>看板娘 | Luyame's Blog</title>
   
 
 
@@ -175,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/20/live2d/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/20/%E7%9C%8B%E6%9D%BF%E5%A8%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/xun.jpg">
@@ -188,7 +190,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          live2d
+          看板娘
         </h1>
 
         <div class="post-meta">
@@ -199,7 +201,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-20 13:37:26 / 修改时间：13:56:24" itemprop="dateCreated datePublished" datetime="2020-06-20T13:37:26+08:00">2020-06-20</time>
+              <time title="创建时间：2020-06-20 13:37:26 / 修改时间：19:58:42" itemprop="dateCreated datePublished" datetime="2020-06-20T13:37:26+08:00">2020-06-20</time>
             </span>
 
           
@@ -213,9 +215,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
-
-
+        <blockquote>
+<p>之前看到有些人的博客上有看板娘，觉得很有趣，今天就来搞了一下，需要用到live2d。</p>
+</blockquote>
+<a id="more"></a>
+<p>在b站上看视频跟着搞出来的，视频连接：<a href="https://www.bilibili.com/video/BV1QW411w7Da?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1QW411w7Da?p=1</a></p>
+<p>live2d下载地址：<a href="https://github.com/galnetwen/Live2D" target="_blank" rel="noopener">https://github.com/galnetwen/Live2D</a></p>
+<p>将压缩包解压后得到Live2D-master文件夹</p>
+<h3 id="1-测试demo"><a href="#1-测试demo" class="headerlink" title="1.测试demo"></a>1.测试demo</h3><p>将Live2D-master中的live2d文件夹（包含js、css的那个）和demo.html放到C:\Users\Administrator\blog\public 这个目录下面<br>将hexo 启动，访问demo页面，即访问localhost:4000/demo.html<br>可爱的看板娘就有了</p>
+<h3 id="2-放到hexo主题中"><a href="#2-放到hexo主题中" class="headerlink" title="2.放到hexo主题中"></a>2.放到hexo主题中</h3><p>把live2d文件夹（包含js、css的那个）移动到C:\Users\Administrator\blog\themes\next\source目录下<br>重新编辑hexo</p>
+<p>启动hexo</p>
+<pre><code>hexo g //编辑hexo
+hexo s //启动hexo</code></pre><p>看板娘依然存在，但是她的位置会随着滑轮而滚动，我们就要让她固定在页面底部</p>
+<h3 id="3-固定在页面底部"><a href="#3-固定在页面底部" class="headerlink" title="3.固定在页面底部"></a>3.固定在页面底部</h3><p>找到这个C:\Users\Administrator\blog\themes\next\layout文件夹下的_layout.swig文件，我是next主题所以路径是next\layout</p>
+<p>在_layout.swig文件中找到class=”footer-inner” 的div，将下面的代码放在这个div中，<font color="red">home_Path</font>这个参数改成自己的博客路径</p>
+<pre><code>link rel=&quot;stylesheet&quot; href=&quot;/live2d/css/live2d.css&quot; /&gt;
+&lt;div id=&quot;landlord&quot;&gt;
+    &lt;div class=&quot;message&quot; style=&quot;opacity:0&quot;&gt;&lt;/div&gt;
+    &lt;canvas id=&quot;live2d&quot; width=&quot;280&quot; height=&quot;250&quot; class=&quot;live2d&quot;&gt;&lt;/canvas&gt;
+    &lt;div class=&quot;hide-button&quot;&gt;隐藏&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var message_Path = &apos;/live2d/&apos;
+    var home_Path = &apos;https://github.com/Luyame/Luyame.github.io.git/&apos; //这个参数改成自己的博客路径
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/live2d/js/live2d.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/live2d/js/message.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    loadlive2d(&quot;live2d&quot;, &quot;/live2d/model/tia/model.json&quot;);
+&lt;/script&gt;</code></pre><p>这样就可以咯</p>
 
     </div>
 
@@ -294,6 +323,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-测试demo"><span class="nav-number">1.</span> <span class="nav-text">1.测试demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-放到hexo主题中"><span class="nav-number">2.</span> <span class="nav-text">2.放到hexo主题中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-固定在页面底部"><span class="nav-number">3.</span> <span class="nav-text">3.固定在页面底部</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
