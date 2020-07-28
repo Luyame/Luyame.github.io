@@ -46,15 +46,17 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;index.html">
+  <meta name="description" content="官方文档 http:&#x2F;&#x2F;kindeditor.net&#x2F;docs&#x2F;upload.html 一、引用js、css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kindeditor富文本编辑器上传图片">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;28&#x2F;kindeditor%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87&#x2F;index.html">
 <meta property="og:site_name" content="Luyame&#39;s Blog">
+<meta property="og:description" content="官方文档 http:&#x2F;&#x2F;kindeditor.net&#x2F;docs&#x2F;upload.html 一、引用js、css">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-17T13:07:16.524Z">
+<meta property="og:updated_time" content="2020-07-28T14:41:58.911Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/">
+<link rel="canonical" href="http://yoursite.com/2020/07/28/kindeditor%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">
 
 
 <script id="page-configurations">
@@ -62,12 +64,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>标签 | Luyame's Blog
-  </title>
+  <title>kindeditor富文本编辑器上传图片 | Luyame's Blog</title>
   
 
 
@@ -167,52 +168,127 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/kindeditor%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/xun.jpg">
+      <meta itemprop="name" content="Michael Luyame">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luyame's Blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kindeditor富文本编辑器上传图片
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">标签
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-07-28 22:42:40 / 修改时间：22:41:58" itemprop="dateCreated datePublished" datetime="2020-07-28T22:42:40+08:00">2020-07-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>官方文档 <a href="http://kindeditor.net/docs/upload.html" target="_blank" rel="noopener">http://kindeditor.net/docs/upload.html</a></p>
+<h2 id="一、引用js、css"><a href="#一、引用js、css" class="headerlink" title="一、引用js、css"></a>一、引用js、css</h2><a id="more"></a> 
+<p>在页面中引用kindeditor的js和css</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;../plug-in/kindeditor/themes/default/default.css&quot; /&gt;
+&lt;script charset=&quot;utf-8&quot; src=&quot;../plug-in/kindeditor/kindeditor-all-min.js&quot;&gt;&lt;/script&gt;
+&lt;script charset=&quot;utf-8&quot; src=&quot;../plug-in/kindeditor/lang/zh-CN.js&quot;&gt;&lt;/script&gt;</code></pre><h2 id="二、页面添加textarea"><a href="#二、页面添加textarea" class="headerlink" title="二、页面添加textarea"></a>二、页面添加textarea</h2><p>这里的文本域id是自定义的</p>
+<pre><code>&lt;textarea id=&quot;about&quot;&gt;&lt;/textarea&gt;</code></pre><h2 id="三、在js中创建对象"><a href="#三、在js中创建对象" class="headerlink" title="三、在js中创建对象"></a>三、在js中创建对象</h2><pre><code>//构建一个默认的编辑器
+setTimeout(kedit, 500);
+
+function kedit() {
+    keditor = KindEditor.create(    
+        &apos;#about&apos;,    //这里的id要和页面的文本域id一致
+    {
+        width : &quot;500px&quot;,    
+        height : &quot;300px&quot;,    
+        resizeMode : 2,     
+        allowUpload : true,
+        uploadJson : base_manage+&apos;saveKindEditorImage&apos;,    //上传图片接口
+        afterBlur : function() {
+            $(&quot;#about&quot;).val(this.sync().html());    //将图片回显到文本域中
+            about_content=this.sync().html();   //about_content是我定义的全局变量
+            console.log(this.sync().html());
+        }
+    });    
+    keditor.html(about_content); //这个用于初始化数据，将数据显示到文本域中（不需要初始化数据这行代码可以不写）
+}</code></pre><h2 id="四、上传图片后端接口"><a href="#四、上传图片后端接口" class="headerlink" title="四、上传图片后端接口"></a>四、上传图片后端接口</h2><p>请求参数：</p>
+<pre><code>POST参数
+imgFile: 文件form名称   //必传
+dir: 上传类型，分别为image、flash、media、file  //必传</code></pre><p>返回格式：</p>
+<pre><code>//成功时
+{
+        &quot;error&quot; : 0,
+        &quot;url&quot; : &quot;http://www.example.com/path/to/file.ext&quot;
+}
+//失败时
+{
+        &quot;error&quot; : 1,
+        &quot;message&quot; : &quot;错误信息&quot;
+}</code></pre><p>后台接口：</p>
+<pre><code>@ResponseBody
+@RequestMapping(&quot;saveKindEditorImage&quot;)  //上传图片接口
+public String saveKindEditorImage(HttpServletRequest request,@RequestParam(&quot;imgFile&quot;) MultipartFile imgFile,@RequestParam(&quot;dir&quot;) String dir) throws Exception {
+    String path = request.getSession().getServletContext().getRealPath(&quot;resource/images/editor/&quot;);
+    String src=centerservice.uploadImage(path, imgFile);
+    String result = &quot;{\&quot;error\&quot;:0,\&quot;url\&quot;:&quot; + JsonUtil.objectToJson(&quot;../resource/images/editor/&quot;+src) + &quot;}&quot;;
+    return result;
+
+}</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/26/Mysql5.5%E5%AE%89%E8%A3%85%E7%89%88%E5%8D%B8%E8%BD%BD/" rel="prev" title="Mysql5.5安装版卸载">
+      <i class="fa fa-chevron-left"></i> Mysql5.5安装版卸载
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -264,6 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、引用js、css"><span class="nav-number">1.</span> <span class="nav-text">一、引用js、css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、页面添加textarea"><span class="nav-number">2.</span> <span class="nav-text">二、页面添加textarea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、在js中创建对象"><span class="nav-number">3.</span> <span class="nav-text">三、在js中创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、上传图片后端接口"><span class="nav-number">4.</span> <span class="nav-text">四、上传图片后端接口</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
